@@ -1,8 +1,9 @@
-*.xml
-*.mf
-/nbproject/
-*.class
-/build/
+# Files to ignore
+#*.xml
+#*.mf
+#/nbproject/
+#*.class
+#/build/
 
 
 *.class

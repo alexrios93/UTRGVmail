@@ -32,7 +32,6 @@ public class EmailSender {
             Properties props = new Properties();
             props.put("mail.smtp.host", "smtp.office365.com");
             props.put("mail.smtp.port","587");
-            props.put("mail.smtp.auth", "false");  //If this is enabled, the program would send email as soon as it's run (no need for authentication)
             props.put("mail.smtp.starttls.enable", "true");
 
 //            props.put("mail.smtp.socketFactory.class", "java.net.ssl.SSLSocketFactory");

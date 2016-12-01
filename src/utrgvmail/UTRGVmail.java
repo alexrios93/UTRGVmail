@@ -72,8 +72,7 @@ public class UTRGVmail extends Application {
         grid.add(lbSubject, 0, 4);
         TextField tfSubject = new TextField();
         tfSubject.setText("TRANSCRIPT FOR YOU!!!!");
-        grid.add(tfSubject, 1, 4);
-        
+        grid.add(tfSubject, 1, 4);        
         
         Label lbTexArea = new Label("Message: ");
         grid.add(lbTexArea, 0, 5);
@@ -94,7 +93,7 @@ public class UTRGVmail extends Application {
             
             @Override
             public void handle(ActionEvent event) {
-                String attachment = "MYPDF.pdf"; 
+                String attachment = "MYPDF.pdf"; // This is where the pdf file goes
                 
                 send1.EmailSender(userTextField.getText(),
                         userTextField.getText(),

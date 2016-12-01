@@ -34,7 +34,7 @@ import org.junit.Test;
 public class EmailSenderTest {
     private final String fromEmail = "USERNAME@utrgv.edu";                              // To test, hardcode your email here
     private final String username = "USERNAME@utrgv.edu";                               // To test, hardcode your email here, too
-    private String password = "USERNAME_PASSWORD";                                                       // To test, hardcode your password here
+    private String password = "USERNAME_PASSWORD";                                      // To test, hardcode your password here
     private final String toEmail = "RECIEPIENT01@gmail.com, RECIEPIENT02@gmail.com";    // To test, hardcode email recipients here, must be separated by a comma (,)
     private final String subject= "Test Subject";
     private final String textMessage = "Test Message";

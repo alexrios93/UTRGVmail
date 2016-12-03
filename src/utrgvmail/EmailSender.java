@@ -61,7 +61,6 @@ public class EmailSender {
             // Add bodyparts
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
-            multipart.addBodyPart(messageBodyPart);
 
             emailMessage.setContent(multipart);
 

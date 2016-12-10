@@ -101,7 +101,8 @@ public class UTRGVmail extends Application {
                         tfMailTo.getText(),
                         tfSubject.getText(),
                         tfTexArea.getText(),
-                        attachment);
+                        attachment,
+                        lbOutpUt);
             }
         });        
                 

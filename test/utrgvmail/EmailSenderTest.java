@@ -8,6 +8,7 @@ package utrgvmail;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Label;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -39,8 +40,7 @@ public class EmailSenderTest {
     private final String subject= "Test Subject";
     private final String textMessage = "Test Message";
     private final String attachment = "MYPDF.pdf";                                      // Here goes the name of the file to attach
-    
-    
+  
     public EmailSenderTest() {
     }
     
@@ -69,12 +69,8 @@ public class EmailSenderTest {
             Properties props = new Properties();
             props.put("mail.smtp.host", "smtp.office365.com");
             props.put("mail.smtp.port","587");
-            //props.put("mail.smtp.auth", "true");  //If this is enabled, the program would send email as soon as it's run (no need for authentication)
+            props.put("mail.smtp.auth", "true"); 
             props.put("mail.smtp.starttls.enable", "true");
-
-//            props.put("mail.smtp.socketFactory.class", "java.net.ssl.SSLSocketFactory");
-//            props.put("mail.smtp.socketFactory.port", "587");
-//            props.put("mail.smtp.socketFactory.fallback", "false");
 
             Session mailSession = Session.getInstance(props, null);
             //mailSession.setDebug(true);
@@ -84,21 +80,22 @@ public class EmailSenderTest {
             emailMessage.setFrom(new InternetAddress(fromEmail));
             emailMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail)); // Mail multiple recipients using a ' ,' as parse
             emailMessage.setSubject(subject);
-
-            // Create body part for the text message 
+            
+            // Create body part for the text message and attatchment
             BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText(textMessage);
+            BodyPart attatchmentBodyPart = new MimeBodyPart();            
 
-            // Create bodypart for attachment
-            messageBodyPart = new MimeBodyPart();
+            // set contnets for text message and attatchment bodyparts
+            messageBodyPart.setText(textMessage); 
+            
             DataSource source = new FileDataSource(attachment); 
-            messageBodyPart.setDataHandler(new DataHandler(source));
-            messageBodyPart.setFileName(attachment);
+            attatchmentBodyPart.setDataHandler(new DataHandler(source));
+            attatchmentBodyPart.setFileName(attachment);
 
             // Add bodyparts
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
-            multipart.addBodyPart(messageBodyPart);
+            multipart.addBodyPart(attatchmentBodyPart);
 
             emailMessage.setContent(multipart);
 

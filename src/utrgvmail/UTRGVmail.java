@@ -35,7 +35,7 @@ public class UTRGVmail extends Application {
     public void start(Stage primaryStage) {
         try {
             String current = new java.io.File( "." ).getCanonicalPath();
-            System.out.println("\n\n\n\n\n==========Current dir:"+current + "\n\n\n\n\n");
+            System.out.println("\n\n\n\n\n==========Current dir:" + current + "\n\n\n\n\n");
         } catch (Exception e) {            
         }
         
